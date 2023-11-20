@@ -6,9 +6,9 @@ MODEL_GPT_4_VISION = "gpt-4-vision-preview"
 
 
 async def stream_openai_response(
-    messages, api_key: str, callback: Callable[[str], Awaitable[None]]
+        messages, api_key: str, callback: Callable[[str], Awaitable[None]]
 ):
-    client = AsyncOpenAI(api_key=api_key)
+    client = AsyncOpenAI(api_key=api_key, base_url=os.environ.get("OPENAI_API_BASE_URL"))
 
     model = MODEL_GPT_4_VISION
 

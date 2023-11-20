@@ -21,7 +21,7 @@ async def process_tasks(prompts, api_key):
 
 
 async def generate_image(prompt, api_key):
-    client = AsyncOpenAI(api_key=api_key)
+    client = AsyncOpenAI(api_key=api_key, base_url=os.environ.get("OPENAI_API_BASE_URL"))
     image_params = {
         "model": "dall-e-3",
         "quality": "standard",
@@ -71,8 +71,8 @@ async def generate_images(code, api_key, image_cache):
         # Only include URL if the image starts with https://placehold.co
         # and it's not already in the image_cache
         if (
-            img["src"].startswith("https://placehold.co")
-            and image_cache.get(img.get("alt")) is None
+                img["src"].startswith("https://placehold.co")
+                and image_cache.get(img.get("alt")) is None
         ):
             alts.append(img.get("alt", None))
 

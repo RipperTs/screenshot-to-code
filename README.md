@@ -24,6 +24,7 @@ Run the backend (I use Poetry for package management - `pip install poetry` if y
 ```bash
 cd backend
 echo "OPENAI_API_KEY=sk-your-key" > .env
+echo "OPENAI_API_BASE_URL=https://api.openai.com/v1" > .env
 poetry install
 poetry shell
 poetry run uvicorn main:app --reload --port 7000
