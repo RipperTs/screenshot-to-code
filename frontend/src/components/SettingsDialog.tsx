@@ -26,13 +26,13 @@ function SettingsDialog({ settings, setSettings }: Props) {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle className="mb-4">Settings</DialogTitle>
+          <DialogTitle className="mb-4">设置</DialogTitle>
         </DialogHeader>
         <div className="flex items-center space-x-2">
           <Label htmlFor="image-generation">
-            <div>DALL-E Placeholder Image Generation</div>
+            <div>使用 DALL-E-3 生成图片占位</div>
             <div className="font-light mt-2">
-              More fun with it but if you want to save money, turn it off.
+              它更形象有趣，但会更多的消耗您的资金，如果您想省钱请关闭它.
             </div>
           </Label>
           <Switch
@@ -46,7 +46,7 @@ function SettingsDialog({ settings, setSettings }: Props) {
             }
           />
         </div>
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-4 hidden">
           <Label htmlFor="openai-api-key">
             <div>OpenAI API key</div>
             <div className="font-light mt-2">
@@ -67,7 +67,7 @@ function SettingsDialog({ settings, setSettings }: Props) {
           />
         </div>
         <DialogFooter>
-          <DialogClose>Save</DialogClose>
+          <DialogClose className={`border p-1 bg-[#333] text-white pl-3 pr-3 text-sm rounded hover:bg-[#555]`}>保 存</DialogClose>
         </DialogFooter>
       </DialogContent>
     </Dialog>

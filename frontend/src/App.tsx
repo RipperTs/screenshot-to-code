@@ -110,12 +110,12 @@ function App() {
       <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-96 lg:flex-col">
         <div className="flex grow flex-col gap-y-2 overflow-y-auto border-r border-gray-200 bg-white px-6">
           <div className="flex items-center justify-between mt-10">
-            <h1 className="text-2xl ">Screenshot to Code</h1>
+            <h1 className="text-2xl ">截图转代码</h1>
             <SettingsDialog settings={settings} setSettings={setSettings} />
           </div>
           {appState === "INITIAL" && (
             <h2 className="text-sm text-gray-500 mb-2">
-              Drag & drop a screenshot to get started.
+              将代码的截图拖放到指定位置来快速开始
             </h2>
           )}
 
@@ -138,25 +138,25 @@ function App() {
                 <div>
                   <div className="grid w-full gap-2">
                     <Textarea
-                      placeholder="Tell the AI what to change..."
+                      placeholder="有什么需要改变的,请告诉我!"
                       onChange={(e) => setUpdateInstruction(e.target.value)}
                       value={updateInstruction}
                     />
-                    <Button onClick={doUpdate}>Update</Button>
+                    <Button onClick={doUpdate}>更 新</Button>
                   </div>
                   <div className="flex items-center gap-x-2 mt-2">
                     <Button
                       onClick={downloadCode}
                       className="flex items-center gap-x-2"
                     >
-                      <FaDownload /> Download
+                      <FaDownload /> 下载代码
                     </Button>
                     <Button
                       onClick={reset}
                       className="flex items-center gap-x-2"
                     >
                       <FaUndo />
-                      Reset
+                      重新生成
                     </Button>
                   </div>
                 </div>
@@ -177,7 +177,7 @@ function App() {
                     />
                   </div>
                   <div className="text-gray-400 uppercase text-sm text-center mt-1">
-                    Original Screenshot
+                    原始截图
                   </div>
                 </div>
 
@@ -213,14 +213,14 @@ function App() {
               <div className="flex justify-end mr-8 mb-4">
                 <TabsList>
                   <TabsTrigger value="desktop" className="flex gap-x-2">
-                    <FaDesktop /> Desktop
+                    <FaDesktop /> 桌面端
                   </TabsTrigger>
                   <TabsTrigger value="mobile" className="flex gap-x-2">
-                    <FaMobile /> Mobile
+                    <FaMobile /> 移动端
                   </TabsTrigger>
                   <TabsTrigger value="code" className="flex gap-x-2">
                     <FaCode />
-                    Code
+                    代码
                   </TabsTrigger>
                 </TabsList>
               </div>

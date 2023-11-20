@@ -140,7 +140,7 @@ function ImageUpload({ setReferenceImages }: Props) {
       {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
       <div {...getRootProps({ style: style as any })}>
         <input {...getInputProps()} />
-        <p>Drop a screenshot here, paste from clipboard, or click to select</p>
+        <p>将屏幕截图拖放到此处，从剪贴板粘贴或单击选择</p>
       </div>
     </section>
   );
